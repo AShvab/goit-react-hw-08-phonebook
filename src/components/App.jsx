@@ -63,7 +63,6 @@ const App = () => {
       <Form onSubmit={handleAddContact} />
       <Subtitle>Contacts</Subtitle>
       {isLoading && !error && <Loader />}
-
       <Total>Total contacts: {filteredContacts.length}</Total>
       <SearchContact filter={filter} searchContact={handleSearchContact} />
       <ContactList
