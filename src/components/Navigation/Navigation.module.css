@@ -1,0 +1,14 @@
+
+.headerList {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .headerLink {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
