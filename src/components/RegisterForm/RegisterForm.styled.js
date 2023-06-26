@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+`;
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 400px;
-  height: 280px;
+  height: 300px;
   padding: 20px 40px;
   border-radius: 8px;
   background: #F9B8C7; 

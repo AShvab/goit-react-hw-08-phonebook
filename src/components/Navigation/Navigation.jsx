@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
   &.active {
-    color: orange;
+    color: #590042;
   }
 `;
 

@@ -11,19 +11,27 @@
 //       textAlign: 'center',
 //     },
 //   };
-  
-  export default function Home() {
-    return (
-      // <div style={styles.container}>
-      //   <h1 style={styles.title}>
-      <div>
-        <h1>
-       Welcome page{' '}
-          <span role="img" aria-label="Greeting icon">
-            💁‍♀️
-          </span>
-        </h1>
-      </div>
-    );
-  }
-  
+
+
+import css from './Home.module.css'
+
+export default function Home() {
+  return (
+    // <div style={styles.container}>
+    //   <h1 style={styles.title}>
+    <div>
+      <h1 className={css.title}>
+        Welcome to my Phonebook app{' '}
+        {/* <span role="img" aria-label="Greeting icon">
+          💁‍♀️
+        </span> */}
+      </h1>
+      {/* <h2>
+        Please
+        <Link to="/register">Create an account</Link> or{' '}
+        <Link to="/login">Login</Link> to continue
+      </h2> */}
+      
+    </div>
+  );
+}
