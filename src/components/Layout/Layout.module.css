@@ -1,14 +1,15 @@
-.header { 
-  display: flex;  
+.header {
+  display: flex;
   justify-content: center;
-  /* padding: 4px; */
   width: 100%;
   /* box-shadow: 0px 3px 13px 4px rgba(0, 0, 0, 0.75); */
-  box-shadow: 1px 1px 3px 4px rgba(119,  5,  47, 0.7);
+  box-shadow: 1px 1px 3px 4px rgba(119, 5, 47, 0.7);
   /* background-color: #f199ae2d; */
-  background: rgb(211,34,138);
-background: linear-gradient(90deg, rgba(211,34,138,0.5797968845741421) 0%, rgba(255,255,255,1) 100%);
+  background: rgb(211, 34, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(211, 34, 138, 0.5797968845741421) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
   z-index: 1;
 }
-
-

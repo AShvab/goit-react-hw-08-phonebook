@@ -31,17 +31,16 @@ export const Subtitle = styled.h2`
   text-align: center;
 `;
 
-export const Text = styled.p `
+export const Text = styled.p`
   color: #590042;
   font-size: 14px;
   text-align: center;
-`
-export const Total = styled.span`
-	display: flex;
-  justify-content: center;
-  margin-top:10px;
-  margin-bottom:10px;
-	font-size: 16px;
-    font-weight: bold;    
 `;
-
+export const Total = styled.span`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+`;

@@ -78,8 +78,9 @@
 // export default App;
 
 import { Route, Routes } from 'react-router-dom';
-import {  lazy } from 'react';
 import Layout from './Layout/Layout';
+import { Suspense , lazy } from 'react';
+import { NotFound } from 'pages/NotFound';
 // import { NotFound } from 'pages/NotFound';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
@@ -90,6 +91,7 @@ const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 
 const App = () => {
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
@@ -97,7 +99,9 @@ const App = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="contacts" element={<ContactsPage />} />     
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
+    </Suspense>
   );
 };
 

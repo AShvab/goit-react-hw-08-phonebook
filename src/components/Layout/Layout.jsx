@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Navigation from 'components/Navigation/Navigation';
 import css from './Layout.module.css';
 import { Suspense } from 'react';
+import Footer from 'components/Footer/Footer';
 
 const Layout = () => {
   return (
@@ -27,7 +28,9 @@ const Layout = () => {
         </Suspense>
       </main>
 
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };
