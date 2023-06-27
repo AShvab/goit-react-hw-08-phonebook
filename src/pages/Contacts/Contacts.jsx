@@ -2,13 +2,13 @@ import ContactList from 'components/ContactList/ContactList';
 import SearchContact from 'components/SearchContact/SearchContact';
 import React, { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { setFilter } from 'redux/filtersSlice';
-import { addContact, deleteContact, fetchContacts } from 'redux/operations';
+import { setFilter } from 'redux/contacts/filtersSlice';
+import { addContact, deleteContact, fetchContacts } from 'redux/contacts/operations';
 import { Container, Subtitle, Title, Total } from './Contacts.styled';
 import Loader from 'components/Loader/Loader';
 import Form from 'components/Form/Form';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectError, selectFilter, selectIsLoading } from 'redux/selectors';
+import { selectContacts, selectError, selectFilter, selectIsLoading } from 'redux/contacts/selectors';
 import 'react-toastify/dist/ReactToastify.css';
 
 

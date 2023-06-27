@@ -7,6 +7,8 @@
 // import { Container,  Subtitle, Title, Total } from './App.styled';
 // import { useSelector, useDispatch } from 'react-redux';
 
+
+
 // import { setFilter } from 'redux/filtersSlice';
 // import { addContact, deleteContact, fetchContacts } from 'redux/operations';
 // import {
@@ -77,32 +79,84 @@
 
 // export default App;
 
-import { Route, Routes } from 'react-router-dom';
-import Layout from './Layout/Layout';
-import { Suspense , lazy } from 'react';
-import { NotFound } from 'pages/NotFound';
+// import { Route, Routes } from 'react-router-dom';
+// import Layout from './Layout/Layout';
+// import { Suspense , lazy } from 'react';
 // import { NotFound } from 'pages/NotFound';
+// // import { NotFound } from 'pages/NotFound';
+
+// const HomePage = lazy(() => import('../pages/Home/Home'));
+// const RegisterPage = lazy(() => import('../pages/Register/Register'));
+// const LoginPage = lazy(() => import('../pages/Login/Login'));
+// const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
+
+
+// const App = () => {
+//   return (
+//     <Suspense fallback={<div>Loading...</div>}>
+//     <Routes>
+//       <Route path="/" element={<Layout />}>
+//         <Route index element={<HomePage />} />
+//         <Route path="register" element={<RegisterPage />} />
+//         <Route path="login" element={<LoginPage />} />
+//         <Route path="contacts" element={<ContactsPage />} />     
+//       </Route>
+//       <Route path="*" element={<NotFound />} />
+//     </Routes>
+//     </Suspense>
+//   );
+// };
+
+// export default App;
+
+import { Route, Routes } from 'react-router-dom';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+import Layout from './Layout/Layout';
+import { lazy, useEffect } from 'react';
+import { refreshUser } from 'redux/auth/operations';
+import useAuth from 'hooks/useAuth';
+import { useDispatch } from 'react-redux';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 
-
 const App = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="contacts" element={<ContactsPage />} />     
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
       </Route>
-      <Route path="*" element={<NotFound />} />
     </Routes>
-    </Suspense>
   );
 };
-
 export default App;

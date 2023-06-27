@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Navigation from 'components/Navigation/Navigation';
 import css from './Layout.module.css';
 import { Suspense } from 'react';
 import Footer from 'components/Footer/Footer';
+import AppBar from 'components/AppBar/AppBar';
 
 const Layout = () => {
   return (
@@ -19,10 +19,12 @@ const Layout = () => {
         }}
       />
       <header className={css.header}>
-        <Navigation />
+        {/* <Navigation /> */}
+        <AppBar />
       </header>
 
       <main className={css.main}>
+       
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
