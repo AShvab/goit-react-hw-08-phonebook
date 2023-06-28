@@ -1,7 +1,6 @@
 
 .headerList {
     display: flex;
-    /* gap: 200px; */
     list-style: none;
     font-size: 20px;
     font-weight: 700;
@@ -10,6 +9,6 @@
   
   .headerLink {
     text-decoration: none;
-    color: #ffffff;
+    color: #590042;
     margin-right: 100px;
   }
