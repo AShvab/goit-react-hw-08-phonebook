@@ -67,4 +67,6 @@ export const Button = styled.button`
 export const Title = styled.h2`
 margin-top: 10px;
 margin-bottom:20px;
+border-bottom: 1px solid #590042;
+padding-bottom:8px;
 `;

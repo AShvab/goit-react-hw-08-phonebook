@@ -24,7 +24,7 @@ const RegisterForm = () => {
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit} autoComplete="off">
-      <Title>LoginForm</Title>
+      <Title>RegisterForm</Title>
       <LabelForm>Username</LabelForm>
       <Input type="text" name="name" />
       <LabelForm>Email</LabelForm>
