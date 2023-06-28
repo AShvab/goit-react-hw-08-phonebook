@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 50vh;
   float: right;
 `;
 
@@ -13,7 +13,7 @@ export const StyledForm = styled.form`
   flex-direction: column;
   justify-content: space-between;
   max-width: 400px;
-  height: 220px;
+  height: 280px;
   padding: 20px 40px;
   border-radius: 8px;
   background: #F9B8C7; 
@@ -66,3 +66,8 @@ export const Button = styled.button`
     }
   } 
 `
+
+export const Title = styled.h2`
+margin-top: 10px;
+margin-bottom:20px;
+`;

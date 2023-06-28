@@ -20,14 +20,7 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
-// ----------------!Обов'язково combineReducers!---------//
-// const rootReducer = combineReducers({
-//   contacts: contactsReducer,
-//   filter: filtersReducer,
-//   auth: persistedAuthReducer,
-// });
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
