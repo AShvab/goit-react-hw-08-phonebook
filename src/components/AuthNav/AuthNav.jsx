@@ -4,20 +4,20 @@ import styled from "styled-components";
 
 const StyledLink = styled(NavLink)`
   &.active {
-    color: #590042;
+    color: orange;
   }
 `;
 
-export const AuthNav = () => {
-    return (
-      <div className={css.container}>
-        <StyledLink className={css.link} to="/register">
-          Register
-        </StyledLink>
-        <StyledLink className={css.link} to="/login">
-          Log In
-        </StyledLink>
-      </div>
-    );
-  };
-  
+const AuthNav = () => {
+  return (
+    <div>
+      <StyledLink className={css.link} to="/register">
+        Register
+      </StyledLink>
+      <StyledLink className={css.link} to="/login">
+        Log In
+      </StyledLink>
+    </div>
+  );
+};
+ export default AuthNav;

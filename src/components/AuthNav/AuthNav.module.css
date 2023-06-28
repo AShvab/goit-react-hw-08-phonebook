@@ -1,12 +1,11 @@
 .link {
   display: inline-block;
   text-decoration: none;
-  /* padding: 12px; */
+  padding: 12px;
+  font-size: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: #590042;
 }
 
-.container {
-  display: flex;
-  gap: 20px;
-}
+
+

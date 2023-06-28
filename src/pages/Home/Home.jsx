@@ -5,13 +5,7 @@ export default function Home() {
     <div>
       <h1 className={css.title}>        
         Welcome to my Phonebook app
-      </h1>
-      {/* <h2>
-        Please
-        <Link to="/register">Create an account </Link> or
-        <Link to="/login">Login</Link> to continue
-      </h2> */}
-      
+      </h1>     
     </div>
   );
 }

@@ -1,39 +1,17 @@
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import css from './Layout.module.css';
 import { Suspense } from 'react';
 import Footer from 'components/Footer/Footer';
 import AppBar from 'components/AppBar/AppBar';
 
 const Layout = () => {
   return (
-    <>
-      <Toaster
-        position="top-right"
-        toastOptions={{
-          duration: 1500,
-          style: {
-            background: '#360404',
-            color: '#fff',
-          },
-        }}
-      />
-      <header className={css.header}>
-        {/* <Navigation /> */}
-        <AppBar />
-      </header>
-
-      <main className={css.main}>
-       
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
-        </Suspense>
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
-    </>
+    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+      <Footer />
+    </div>
   );
 };
 
